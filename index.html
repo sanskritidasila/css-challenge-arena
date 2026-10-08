@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Challenge Arena</title>
+
+  <!-- Typography: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="header-left">
+      <h1>CSS Arena</h1>
+      <span id="level-title" class="badge">Level 1</span>
+    </div>
+    <div class="header-controls">
+      <button id="prev-btn" class="btn secondary">&larr; Prev</button>
+      <button id="next-btn" class="btn secondary">Next &rarr;</button>
+      <button id="hint-btn" class="btn outline">Hint</button>
+      <button id="check-btn" class="btn primary">Check Solution</button>
+    </div>
+  </header>
+
+  <main class="arena-layout">
+    <!-- Left Column: Instructions and Code Editor -->
+    <section class="panel editor-pane">
+      <div class="instructions-card">
+        <h2 id="task-title">Loading...</h2>
+        <p id="task-description"></p>
+        <div id="hint-box" class="hint-card hidden"></div>
+      </div>
+
+      <div class="editor-container">
+        <label for="css-input" class="pane-label">Write your CSS here:</label>
+        <textarea
+          id="css-input"
+          spellcheck="false"
+          placeholder="/* Type your CSS here... */"
+        ></textarea>
+      </div>
+    </section>
+
+    <!-- Right Column: Dual Live Arena (Target vs User) -->
+    <section class="panel preview-pane">
+      <div class="preview-box">
+        <span class="pane-label">Target Layout</span>
+        <iframe id="target-frame" title="Target Layout"></iframe>
+      </div>
+      <div class="preview-box">
+        <span class="pane-label">Your Preview</span>
+        <iframe id="user-frame" title="User Preview"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <div id="feedback-bar" class="feedback-bar hidden"></div>
+<div id="feedback-bar" class="feedback-bar hidden"></div>
+
+  <!-- Celebratory Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="levels.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
